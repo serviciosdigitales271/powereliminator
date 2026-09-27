@@ -3,564 +3,228 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Power Eliminator - Soluciones de Limpieza Profesional e Industrial</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- FontAwesome Icons -->
+  <title>Power Eliminator - Oferta de Limpieza Profunda</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <style>
-    :root {
-      --primary-yellow: #ffcc00;
-      --primary-blue: #0066cc;
-      --accent-red: #d32f2f;
-      --dark-gray: #111111;
-      --card-gray: #1a1a1a;
-      --light-bg: #f8fafc;
-      --text-dark: #1e293b;
-      --text-muted: #64748b;
-      --whatsapp-green: #25d366;
-      --whatsapp-dark: #128c7e;
+    @keyframes pulse-fast {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--light-bg);
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
-
-    /* BANNER SUPERIOR DE URGENCIA */
-    .top-bar {
-      background-color: var(--accent-red);
-      color: #ffffff;
-      text-align: center;
-      padding: 10px 15px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      background: linear-gradient(135deg, rgba(17,17,17,0.95), rgba(30,30,30,0.9)), url('https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-      color: #ffffff;
-      padding: 60px 20px 100px 20px;
-    }
-
-    .hero-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .badge-brand {
-      background-color: var(--primary-yellow);
-      color: var(--dark-gray);
-      font-weight: 800;
-      padding: 6px 16px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      display: inline-block;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      font-weight: 900;
-      line-height: 1.2;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: var(--primary-yellow);
-    }
-
-    .hero p.subtitle {
-      font-size: 1.15rem;
-      color: #cbd5e1;
-      margin-bottom: 30px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* BOTONES CTA WHATSAPP */
-    .btn-whatsapp-hero {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      background-color: var(--whatsapp-green);
-      color: #ffffff;
-      font-weight: 800;
-      font-size: 1.1rem;
-      padding: 16px 32px;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-    }
-
-    .btn-whatsapp-hero:hover {
-      background-color: var(--whatsapp-dark);
-      transform: translateY(-4px);
-      box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
-    }
-
-    /* SECCIÓN DE PRODUCTOS PRINCIPALES CON IMÁGENES */
-    .products-section {
-      max-width: 1200px;
-      margin: -60px auto 80px auto;
-      padding: 0 20px;
-      position: relative;
-      z-index: 10;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-
-    @media (min-width: 850px) {
-      .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .product-card {
-      background: #ffffff;
-      border-radius: 24px;
-      padding: 25px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-      border: 3px solid transparent;
-      transition: transform 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .product-card.yellow-line {
-      border-color: var(--primary-yellow);
-    }
-
-    .product-card.blue-line {
-      border-color: var(--primary-blue);
-    }
-
-    .product-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .product-img-container {
-      width: 100%;
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    }
-
-    .product-img-container img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-    }
-
-    .product-tag {
-      align-self: flex-start;
-      padding: 6px 14px;
-      border-radius: 12px;
-      font-size: 0.8rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .product-tag.yellow {
-      background-color: #fffde6;
-      color: #b38f00;
-    }
-
-    .product-tag.blue {
-      background-color: #e6f0ff;
-      color: #0052cc;
-    }
-
-    .product-card h3 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--dark-gray);
-      margin-bottom: 10px;
-    }
-
-    .product-card p.desc {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-    }
-
-    .product-bullets {
-      list-style: none;
-      margin-bottom: 25px;
-    }
-
-    .product-bullets li {
-      margin-bottom: 10px;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .product-bullets li i {
-      color: var(--whatsapp-green);
-    }
-
-    /* CARACTERÍSTICAS GENERALES */
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-title h2 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--dark-gray);
-      text-transform: uppercase;
-    }
-
-    .section-title p {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-    }
-
-    .features-section {
-      max-width: 1100px;
-      margin: 80px auto;
-      padding: 0 20px;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    @media (min-width: 768px) {
-      .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .feature-card {
-      background-color: #ffffff;
-      border-radius: 16px;
-      padding: 25px;
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      border-left: 6px solid var(--primary-yellow);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-    }
-
-    .feature-icon {
-      width: 60px;
-      height: 60px;
-      background-color: #fffde6;
-      color: var(--dark-gray);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      flex-shrink: 0;
-    }
-
-    .feature-text h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--dark-gray);
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .feature-text p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* PRICING & PROMO COMBINADA */
-    .pricing-section {
-      padding: 80px 20px;
-      background-color: #f1f5f9;
-    }
-
-    .pricing-card {
-      max-width: 700px;
-      margin: 0 auto;
-      background-color: #ffffff;
-      border: 3px solid var(--primary-yellow);
-      border-radius: 24px;
-      padding: 40px 30px;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      position: relative;
-    }
-
-    .pricing-badge {
-      position: absolute;
-      top: -18px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: var(--dark-gray);
-      color: var(--primary-yellow);
-      font-weight: 800;
-      padding: 6px 24px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-    }
-
-    .price-main {
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: var(--dark-gray);
-      margin: 15px 0;
-    }
-
-    .price-note {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 30px;
-    }
-
-    /* FOOTER & CTA */
-    .cta-footer {
-      background-color: var(--dark-gray);
-      color: #ffffff;
-      text-align: center;
-      padding: 70px 20px;
-    }
-
-    .cta-footer h2 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      margin-bottom: 15px;
-    }
-
-    .cta-footer p {
-      color: #94a3b8;
-      max-width: 600px;
-      margin: 0 auto 30px auto;
-      font-size: 1.1rem;
-    }
-
-    footer {
-      background-color: #0a0a0a;
-      color: #64748b;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.85rem;
-    }
-
-    /* BOTÓN FLOTANTE DE WHATSAPP */
-    .float-whatsapp {
-      position: fixed;
-      width: 65px;
-      height: 65px;
-      bottom: 25px;
-      right: 25px;
-      background-color: var(--whatsapp-green);
-      color: #ffffff;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 34px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-
-    .float-whatsapp:hover {
-      transform: scale(1.1);
+    .animate-bounce-cta {
+      animation: pulse-fast 1.8s infinite ease-in-out;
     }
   </style>
 </head>
-<body>
+<body class="bg-gray-950 text-white font-sans antialiased pb-20">
 
-  <!-- BARRA SUPERIOR -->
-  <div class="top-bar">
-    ⚡ ENVIOS GARANTIZADOS A TODO EL ECUADOR | PEDIDOS DIRECTOS POR WHATSAPP ⚡
+  <div class="bg-gradient-to-r from-red-700 via-red-600 to-red-700 text-white py-2.5 px-4 text-center sticky top-0 z-40 shadow-lg border-b border-red-500">
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider">
+      <span>⚡ ¡OFERTA POR TIEMPO LIMITADO! LA PROMOCIÓN EXPIRA EN:</span>
+      <div class="bg-black/40 px-3 py-1 rounded-md border border-white/20 font-mono text-yellow-300 text-base sm:text-lg" id="timer">
+        15:00
+      </div>
+    </div>
   </div>
 
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <div class="hero-container">
-      <span class="badge-brand">LÍNEA PROFESIONAL POWER ELIMINATOR</span>
-      <h1>Limpia, Restaura y Elimina <span>Lluvia Ácida, Sarro y Grasa Pesada</span></h1>
-      <p class="subtitle">Descubre la potencia de nuestra línea especializada. Soluciones definitivas tanto para cristales y vehículos como para limpieza profunda industrial y del hogar.</p>
+  <main class="max-w-4xl mx-auto px-4 py-6 space-y-10">
+    
+    <header class="text-center space-y-3 pt-2">
+      <div class="inline-block bg-yellow-400 text-black font-black text-xs px-3 py-1 rounded-full uppercase tracking-widest shadow-md">
+        🏆 8 Años Liderando el Mercado
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black uppercase tracking-tight">
+        POWER <span class="text-yellow-400">ELIMINATOR</span>
+      </h1>
+      <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto">
+        Restaura cristales, elimina lluvia ácida, sarro y grasa industrial sin usar guantes y sin dañar tus manos.
+      </p>
+    </header>
 
-      <a href="https://wa.me/593999310711?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20los%20productos%20Power%20Eliminator" class="btn-whatsapp-hero" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i> Chatear con un Asesor por WhatsApp
-      </a>
-    </div>
-  </header>
+    <section class="bg-gray-900 border border-yellow-500/30 rounded-2xl p-4 sm:p-6 shadow-2xl space-y-4">
+      <div class="text-center">
+        <h2 class="text-lg sm:text-2xl font-bold text-yellow-400">
+          🎬 Mira los productos en acción (20 Segundos)
+        </h2>
+      </div>
 
-  <!-- SECCIÓN DE PRODUCTOS CON SUS IMÁGENES -->
-  <section class="products-section">
-    <div class="products-grid">
-      
-      <!-- PRODUCTO 1: REMOVEDOR LLUVIA ÁCIDA Y SARRO -->
-      <div class="product-card yellow-line">
+      <div class="relative w-full max-w-xs sm:max-w-sm mx-auto aspect-[9/16] bg-black rounded-xl overflow-hidden shadow-2xl border border-gray-800">
+        <video class="w-full h-full object-cover" controls autoplay muted loop playsinline poster="image_1b7561.jpeg">
+          <source src="powerportadalanding.mp4" type="video/mp4">
+          Tu navegador no soporta el video.
+        </video>
+      </div>
+
+      <div class="text-center pt-2">
+        <a href="https://wa.me/593999310711?text=Hola,%20quiero%20aprovechar%20la%20promoci%C3%B3n%20del%20Kit%20Power%20Eliminator" 
+           target="_blank"
+           class="animate-bounce-cta inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-black text-lg px-8 py-4 rounded-xl shadow-xl transition">
+          <i class="fa-brands fa-whatsapp text-2xl"></i>
+          ¡ORDENAR MI COMBO EN OFERTA POR WHATSAPP!
+        </a>
+      </div>
+    </section>
+
+    <section class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-2xl grid md:grid-cols-2 gap-6 p-6">
+      <div class="space-y-4 flex flex-col justify-between">
         <div>
-          <div class="product-img-container">
-            <img src="image_1b7561.jpg" alt="Power Eliminator Removedor Lluvia Ácida">
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="bg-red-600 text-white font-black text-xs px-2.5 py-1 rounded-md uppercase">
+              OFERTA DE HOY
+            </span>
+            <span class="text-xs text-gray-400 font-semibold">
+              🚚 Entrega a Nivel Nacional
+            </span>
           </div>
-          <span class="product-tag yellow">Lluvia Ácida & Sarro</span>
-          <h3>Power Eliminator (120ml)</h3>
-          <p class="desc">Formulado para restaurar la transparencia original en vidrios, faros y cristales con manchas de agua dura.</p>
-          
-          <ul class="product-bullets">
-            <li><i class="fa-solid fa-check"></i> <strong>Lluvia Ácida:</strong> Elimina marcas profundas de agua dura y minerales.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Vidrios de Baño:</strong> Limpia mamparas de ducha opacas por sarro.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Uso Automotriz:</strong> Excelente para parabrisas, espejos y faros.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Fórmula Concentrada:</strong> La mejor fórmula del mercado.</li>
+
+          <h3 class="text-2xl font-black text-yellow-400">Power Eliminator Removedor</h3>
+          <p class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-3">
+            Para Parabrisas de Autos, Mamparas y Bañeras
+          </p>
+
+          <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4">
+            El agua se quema con el sol y el polvo creando lluvia ácida en los autos. En baños, el vapor, jabón y grasa corporal forman vetas difíciles. ¡Este producto lo elimina al instante!
+          </p>
+
+          <ul class="space-y-2 text-xs sm:text-sm text-gray-200 mb-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> <strong>Se puede utilizar sin guantes</strong> (fórmula segura).</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-gift text-yellow-400"></i> <strong>REGALO:</strong> Incluye esponja de fibra + esponja metálica.</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-shield text-blue-400"></i> 8 años de garantía y efectividad en el mercado.</li>
           </ul>
         </div>
 
-        <a href="https://wa.me/593999310711?text=Hola,%20deseo%20comprar%20el%20Power%20Eliminator%20Removedor%20de%20Lluvia%20%C3%81cida%20(120ml)" class="btn-whatsapp-hero" style="width: 100%; text-align: center;" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i> Pedir Removedor de Lluvia Ácida
-        </a>
+        <div class="bg-gray-950 p-4 rounded-xl border border-gray-800 space-y-3">
+          <div class="text-xs font-bold text-gray-400 uppercase">Selecciona tu presentación en promoción:</div>
+          
+          <div class="flex justify-between items-center border-b border-gray-800 pb-2">
+            <div>
+              <span class="font-bold text-white text-sm">Presentación 250ml</span>
+              <span class="text-xs text-gray-500 line-through ml-2">$30.00</span>
+            </div>
+            <span class="text-xl font-black text-yellow-400">$23.00</span>
+          </div>
+
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="font-bold text-white text-sm">Presentación Litro (500ml)</span>
+              <span class="text-xs text-gray-500 line-through ml-2">$45.00</span>
+            </div>
+            <span class="text-xl font-black text-yellow-400">$34.00</span>
+          </div>
+
+          <a href="https://wa.me/593999310711?text=Hola,%20quiero%20pedir%20el%20Power%20Eliminator%20Removedor%20en%20oferta" 
+             target="_blank"
+             class="block text-center w-full bg-yellow-400 hover:bg-yellow-500 text-black font-extrabold py-3 rounded-lg transition mt-2">
+            Comprar Removedor en Oferta
+          </a>
+        </div>
       </div>
 
-      <!-- PRODUCTO 2: LIMPIADOR MULTIUSO E INDUSTRIAL -->
-      <div class="product-card blue-line">
+      <div class="flex items-center justify-center">
+        <img src="image_1b7561.jpeg" alt="Power Eliminator Removedor" class="rounded-xl border border-gray-800 shadow-lg object-cover w-full h-auto">
+      </div>
+    </section>
+
+    <section class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-2xl grid md:grid-cols-2 gap-6 p-6">
+      <div class="flex items-center justify-center order-2 md:order-1">
+        <img src="image_1b757b.jpg" alt="Power Eliminator Multiusos" class="rounded-xl border border-gray-800 shadow-lg object-cover w-full h-auto">
+      </div>
+
+      <div class="space-y-4 flex flex-col justify-between order-1 md:order-2">
         <div>
-          <div class="product-img-container">
-            <img src="image_1b757b.jpg" alt="Power Eliminator Limpiador Industrial Multiuso">
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="bg-blue-600 text-white font-black text-xs px-2.5 py-1 rounded-md uppercase">
+              PRECIO PROMOCIONAL
+            </span>
+            <span class="text-xs text-gray-400 font-semibold">
+              🚚 Entrega a Nivel Nacional
+            </span>
           </div>
-          <span class="product-tag blue">Limpiador Industrial & Multiuso</span>
-          <h3>Power Eliminator Atomizador</h3>
-          <p class="desc">Solución definitiva de limpieza pesada industrial. Elimina grasa pegada, sarro rebelde y manchas en múltiples superficies.</p>
-          
-          <ul class="product-bullets">
-            <li><i class="fa-solid fa-check"></i> <strong>Remoción de Grasa:</strong> Ideal para cocinas, campanas, sartenes y parrillas.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Limpieza Industrial:</strong> Remueve suciedad pesada en baldosas y rejillas.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Brillo Instantáneo:</strong> Ahorra tiempo y esfuerzo en cada pasada.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Uso Multisuperficies:</strong> Potente acción desengrasante y desinfectante.</li>
+
+          <h3 class="text-2xl font-black text-blue-400">Power Eliminator Multiusos</h3>
+          <p class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-3">
+            Limpieza Profunda e Industrial (600ml)
+          </p>
+
+          <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4">
+            Especial para baldosas ásperas, remover grasa corporal adherida, sarro pesado en llaves y grifería. Restaura el brillo permanente y desinfecta tu hogar.
+          </p>
+
+          <ul class="space-y-2 text-xs sm:text-sm text-gray-200 mb-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Restaura el brillo permanente de tus griferías.</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Desinfecta dejando un <strong>perfume distinguido</strong>.</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Fórmula suave que <strong>no daña tus manos</strong>.</li>
           </ul>
         </div>
 
-        <a href="https://wa.me/593999310711?text=Hola,%20deseo%20comprar%20el%20Power%20Eliminator%20Limpiador%20Multiuso%20Industrial%20Atomizador" class="btn-whatsapp-hero" style="width: 100%; text-align: center; background-color: var(--primary-blue);" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i> Pedir Limpiador Multiuso
-        </a>
-      </div>
+        <div class="bg-gray-950 p-4 rounded-xl border border-gray-800 space-y-3">
+          <div class="text-xs font-bold text-gray-400 uppercase">Oferta especial de lanzamiento:</div>
+          
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="font-bold text-white text-sm">Frasco Atomizador 600ml</span>
+              <span class="text-xs text-gray-500 line-through ml-2">$14.00</span>
+            </div>
+            <div class="text-right">
+              <span class="text-2xl font-black text-green-400">$8.00</span>
+            </div>
+          </div>
 
-    </div>
-  </section>
-
-  <!-- CARACTERÍSTICAS DESTACADAS -->
-  <section class="features-section">
-    <div class="section-title">
-      <h2>¿Por qué elegir Power Eliminator?</h2>
-      <p>Resultados profesionales adaptados a tus necesidades de limpieza.</p>
-    </div>
-
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fa-solid fa-bolt"></i>
-        </div>
-        <div class="feature-text">
-          <h3>Fórmula de Acción Rápida</h3>
-          <p>Penetra y disuelve los residuos pegados sin necesidad de tallar excesivamente.</p>
+          <a href="https://wa.me/593999310711?text=Hola,%20quiero%20pedir%20el%20Power%20Eliminator%20Multiusos%20de%20600ml%20por%20$8" 
+             target="_blank"
+             class="block text-center w-full bg-blue-500 hover:bg-blue-600 text-white font-extrabold py-3 rounded-lg transition mt-2">
+            Comprar Multiusos por $8 por WhatsApp
+          </a>
         </div>
       </div>
+    </section>
 
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fa-solid fa-car"></i>
-        </div>
-        <div class="feature-text">
-          <h3>Cuidado Automotriz Garantizado</h3>
-          <p>Restaura la visibilidad en parabrisas sin rallar ni dañar los cristales ni la pintura.</p>
-        </div>
+    <footer class="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center space-y-3">
+      <div class="flex justify-center items-center gap-4 text-yellow-400 text-xl">
+        <i class="fa-solid fa-truck-fast"></i>
+        <i class="fa-solid fa-shield-halved"></i>
+        <i class="fa-solid fa-award"></i>
       </div>
+      <h4 class="font-bold text-base sm:text-lg">Garantía de Satisfacción Power Eliminator</h4>
+      <p class="text-xs sm:text-sm text-gray-400">
+        8 años en el mercado. Envíos y entregas seguras a nivel nacional.
+      </p>
+    </footer>
 
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fa-solid fa-kitchen-set"></i>
-        </div>
-        <div class="feature-text">
-          <h3>Poder Desengrasante Extremo</h3>
-          <p>Remueve grasa quemada en cocinas industriales, parrillas y superficies difíciles.</p>
-        </div>
-      </div>
+  </main>
 
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fa-solid fa-truck-fast"></i>
-        </div>
-        <div class="feature-text">
-          <h3>Envíos Rápidos y Seguros</h3>
-          <p>Despachamos tu pedido inmediatamente a cualquier provincia del país.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING / COMBO PROMOCIONAL -->
-  <section class="pricing-section">
-    <div class="pricing-card">
-      <span class="pricing-badge">Promoción Combo Dúo</span>
-      <h3>Kit Completo Power Eliminator</h3>
-      <p style="color: var(--text-muted); margin-top: 10px;">Llévate el <strong>Removedor de Lluvia Ácida</strong> + <strong>Limpiador Multiuso Industrial</strong> con descuento especial.</p>
-      
-      <div class="price-main">Consulta Oferta Dúo</div>
-      <p class="price-note">Incluye asesoría personalizada de uso + Envío garantizado</p>
-
-      <a href="https://wa.me/593999310711?text=Hola,%20quiero%20consultar%20la%20oferta%20del%20Kit%20D%C3%BAo%20Power%20Eliminator" class="btn-whatsapp-hero" style="width: 100%; justify-content: center;" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i> Pedir Combo por WhatsApp
-      </a>
-    </div>
-  </section>
-
-  <!-- CTA FOOTER -->
-  <section class="cta-footer">
-    <h2>¿Tienes dudas sobre qué producto necesitas?</h2>
-    <p>Escríbenos directamente y te ayudamos a elegir el mejor producto según la superficie que quieras limpiar.</p>
-    <a href="https://wa.me/593999310711?text=Hola,%20tengo%20una%20consulta%20sobre%20Power%20Eliminator" class="btn-whatsapp-hero" target="_blank">
-      <i class="fa-brands fa-whatsapp"></i> Hablar con un Asesor
-    </a>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2026 Power Eliminator Ecuador. Todos los derechos reservados.</p>
-  </footer>
-
-  <!-- BOTÓN FLOTANTE WHATSAPP -->
-  <a href="https://wa.me/593999310711?text=Hola,%20deseo%20comprar%20Power%20Eliminator" class="float-whatsapp" target="_blank" aria-label="WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
+  <a href="https://wa.me/593999310711?text=Hola,%20quiero%20aprovechar%20la%20promoci%C3%B3n%20del%20Kit%20Power%20Eliminator" 
+     target="_blank" 
+     class="fixed bottom-5 right-5 z-50 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl transition transform hover:scale-105 animate-bounce-cta border-2 border-white">
+    <i class="fa-brands fa-whatsapp text-2xl sm:text-3xl"></i>
+    <span class="hidden sm:inline text-sm font-extrabold">¡Pedir por WhatsApp!</span>
   </a>
+
+  <script>
+    function startTimer(durationInSeconds, display) {
+      let timer = durationInSeconds;
+      
+      setInterval(function () {
+        let minutes = parseInt(timer / 60, 10);
+        let seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          timer = durationInSeconds; // Reinicia el timer a 15 min cuando llega a 0
+        }
+      }, 1000);
+    }
+
+    window.onload = function () {
+      const fifteenMinutes = 60 * 15; // 15 Minutos de descuento
+      const display = document.querySelector('#timer');
+      startTimer(fifteenMinutes, display);
+    };
+  </script>
 
 </body>
 </html>
